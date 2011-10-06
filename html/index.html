@@ -1,0 +1,62 @@
+<html><head>
+<title>Rambler on node and mongo</title>
+
+<script type="text/javascript">
+var ajax = false;
+function processkey(e)
+{
+	if(e.keyCode == 13)
+		{
+		document.getElementById("rambleform").submit();
+		}
+}
+
+function getAllRambles()
+{
+	if(!ajax)
+	{
+		ajax = new XMLHttpRequest();
+	}
+	ajax.open("GET","./getAllRambles",true);
+	ajax.send();
+	ajax.onreadystatechange=function(){
+		if(ajax.readyState==4 && ajax.status==200)
+		{
+			document.getElementById('ramblesgohere').innerHTML=ajax.responseText;	
+		}
+	}
+	
+}
+
+</script>
+
+<style language="text/css">
+.ramblebox
+{
+	border-radius: 30px; 
+	moz-border-radius: 30px; 
+	webkit-border-radius: 30px; 
+	border: 5px double #800000;
+	height: 50px;
+	font-size : 14pt
+}
+</style>
+</head>
+<body onload="getAllRambles();"><br><hr>
+<center><font size="8" color=Navy><b><u>My Ramblings</u></b></font></h1></center><hr>
+<br>
+<table width="100%"><tr><td>
+<center>
+<form id="rambleform" action="./getRamble" method="POST">
+<font size="6"><b>What's the ramble now : </b></font><input type="text" class="ramblebox" name="ramble" id="ramble" size=50 onkeydown="processkey(event)"/>
+</form>
+</td></tr></table></center>
+<center>
+<table id="ramblesgohere" border="1" width="50%">
+ 
+</table>
+
+</center>
+</body>
+</html>
+

@@ -1,0 +1,6 @@
+# Compile all the JS files
+node requesthandlers.js 
+node router.js 
+node server.js 
+node index.js
+

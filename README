@@ -1,0 +1,15 @@
+About : 
+Rambler is a simple Web Application to store our day-to-day ramblings. Its implemented on DHTML - node.js - mongoDB. I did it with the idea of learning the new technology. And its awesome!
+
+How to use it :
+Clone the git.
+Change directory to the rambler folder.
+Type "./execute" --> This will compile all the javascript files.
+Go to browser --> Enter "localhost:10000" in the addressbar
+Start rambling! 
+
+Future Directions :
+In future, there would be separate ramble channels. 
+Like, a separate channel for rambling about life, coding, technology, food. Or even to the extent of specific projects which we carry on as part of our profession.
+
+
